@@ -1,0 +1,51 @@
+Dependencies:
+    - jest
+    - inquirer
+
+Classes: 
+    EMPLOYEE -> base class
+        properties:
+            - name
+            - id
+            - title
+        methods:
+            - getName()
+            - getId()
+            - getEmail()
+            - getRole()
+
+    MANAGER
+        additional properties: 
+            - office number
+        additional methods:
+            - getRole() // overrides to manager
+
+    ENGINEER
+        additional properties:
+            - github
+        additional methods: 
+            - getGithub()
+            - getRole() // overrides to engineer
+
+    INTERN
+        additional properties:
+            - school
+        additional methods: 
+            - getSchool()
+            - getRole() // overrides to intern
+
+
+HTML templates: 
+    - main
+    - engineer
+    - intern 
+    - manager
+
+Output Directory: team.HTML
+    - for each team member:
+        - name
+        - role
+        - id
+        - role-specific property
+
+
