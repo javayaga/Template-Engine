@@ -1,6 +1,13 @@
+
 Dependencies:
     - jest
     - inquirer
+
+
+Inquirer prompt parameters: 
+    ID # must be a number 
+    the same ID # can not be used twice
+
 
 Classes: 
     EMPLOYEE -> base class
