@@ -5,27 +5,40 @@ const Manager = require("./lib/manager");
 const Emgineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 
-return inquirer
+
+const employeeData = [
+
+]
+
+function managerPrompt() {
+    return inquirer
     .prompt([{
         type: "input",
         name: "name",
-        message: "What is your name?"
+        message: "What is the manager's name?"
     },
     { 
         type: "number",
         name: "id",
-        message: "What is your ID number?"
+        message: "What is the manager's ID number?"
     },
     {
-        type: "list",
-        name: "role",
-        message: "What is your role?",
-        choices: ["Manager", "Engineer", "Intern"]
+        type: "input",
+        name: "office",
+        message: "What is the manager's office number?",
+    },
+    {
+        type: "confirm",
+        name: "addEmployee",
+        message: "Would you like to add an additional employee?"
     }])
     .then((responses) => {
-        const {name, id, role} = responses;
+        const {name, id, office, addEmployee} = responses;
         console.log(name);
         console.log(id);
-        console.log(role);
-
+        console.log(office);
+        console.log(addEmployee);
     })
+};
+
+managerPrompt();
