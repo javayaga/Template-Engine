@@ -14,7 +14,14 @@ return inquirer
     },
     {
         type: "list",
-        name: "input",
+        name: "role",
         message: "What is your role?",
         choices: ["Manager", "Engineer", "Intern"]
     }])
+    .then((responses) => {
+        const {name, id, role} = responses;
+        console.log(name);
+        console.log(id);
+        console.log(role);
+
+    })
