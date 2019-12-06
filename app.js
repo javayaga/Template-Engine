@@ -1,5 +1,7 @@
 const inquirer = require("inquirer");
 const jest = require("jest");
+const Employee = require("./lib/employee");
+const Manager = require("./lib/manager");
 
 return inquirer
     .prompt([{
