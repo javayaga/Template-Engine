@@ -10,35 +10,70 @@ const employeeData = [
 
 ]
 
-function managerPrompt() {
-    return inquirer
-    .prompt([{
+const managerQuestions = [{
+    type: "input",
+    name: "name",
+    message: "What is the manager's name?"
+},
+{ 
+    type: "number",
+    name: "id",
+    message: "What is the manager's ID number?"
+},
+{
+    type: "input",
+    name: "email",
+    message: "What is the manager's email address?"
+},
+{
+    type: "input",
+    name: "office",
+    message: "What is the manager's office number?",
+},
+{
+    type: "list",
+    name: "addEmployee",
+    message: "Would you like to add an additional employee?",
+    choices: ["Engineer", "Intern", "I have no more employees to add"]
+}];
+
+
+const engineerQuestions = [{
         type: "input",
         name: "name",
-        message: "What is the manager's name?"
+        message: "What is the employee's name?"
     },
     { 
         type: "number",
         name: "id",
-        message: "What is the manager's ID number?"
+        message: "What is the employee's ID number?"
     },
     {
         type: "input",
-        name: "office",
-        message: "What is the manager's office number?",
+        name: "email",
+        message: "What is the employee's email address?"
     },
     {
-        type: "confirm",
+        type: "input",
+        name: "github",
+        message: "What is the employee's GitHub username?"
+    },
+    {
+        type: "list",
         name: "addEmployee",
-        message: "Would you like to add an additional employee?"
-    }])
-    .then((responses) => {
-        const {name, id, office, addEmployee} = responses;
-        console.log(name);
-        console.log(id);
-        console.log(office);
-        console.log(addEmployee);
-    })
-};
+        message: "Would you like to add an additional employee?",
+        choices: ["Engineer", "Intern", "I have no more employees to add"]
+    }];
 
-managerPrompt();
+
+
+return inquirer
+    .prompt(managerQuestions)
+    .then((responses) => {
+        const {name, id, email, office, addEmployee} = responses;
+        console.log(addEmployee);
+        // if (addEmployee = Engineer) {
+        //     inquirer.prompt(engineerQuestions)
+        // }
+});
+
